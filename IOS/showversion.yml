@@ -1,7 +1,8 @@
 ---
-- hosts: all
+  hosts: all
   tasks:
-  - ios_command:
-    commands: show version
+    - name: Show version
+    ios_command:
+      commands: show version
     register: show_version
-  - debug: var=show_version.stdout_lines
+    - debug: var=show_version.stdout_lines
