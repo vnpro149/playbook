@@ -1,7 +1,7 @@
 ---
 - name: 123
   hosts: all
-  task:
+  tasks:
     - name: checkversion
       ios_command:
         commnads: show version
