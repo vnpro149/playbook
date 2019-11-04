@@ -1,5 +1,4 @@
 ---
-- name: 123
   hosts: all
   tasks:
     - name: checkversion
