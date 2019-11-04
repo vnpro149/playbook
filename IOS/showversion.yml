@@ -1,4 +1,5 @@
 ---
+- name: check
   host: all
   task:
     - name: checkversion
