@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - ios_command:
+     commands: show version
+     register: result
+  - fail: msg="Wrong Cisco IOS version"
+when: "not ('Version {{version}}' in result.stdout[0])"
