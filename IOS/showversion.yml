@@ -1,6 +1,5 @@
 ---
-- name: check
-  host: all
+  hosts: all
   task:
     - name: checkversion
       ios_command:
