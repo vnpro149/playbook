@@ -1,4 +1,5 @@
 ---
+- name: check_ver
   host: all
   tasks:
   - name: run show version on remote devices
