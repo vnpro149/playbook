@@ -1,3 +1,6 @@
+---
+- name: Show version
+  hosts: all
   tasks:
     - name: checkversion
       ios_command:
