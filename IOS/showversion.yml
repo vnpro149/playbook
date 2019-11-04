@@ -1,11 +1,11 @@
----
-- name: check version
-  hosts: all
   tasks:
     - name: checkversion
       ios_command:
+        commands: show version
+        wait_for: result[0] contains Version
         commands: 
           - show version
+        wait_for: 
+          - result[0] contains IOS
       register: show_ver
-    - fail: msg="Wrong Cisco IOS version"
-      when: "not ('Version {{"15.5(4)M"}}' in show_ver.stdout[0])"
+    - debug: var=show_ver.stdout_lines
