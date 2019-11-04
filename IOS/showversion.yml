@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - ios_command:
+     commands: show version
+- debug: var=show_vlan.stdout_lines
