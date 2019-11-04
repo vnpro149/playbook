@@ -8,5 +8,5 @@
           - show version
         wait_for: 
           - result[0] contains IOS
-      register: result
+      register: result[0]
     - debug: var=result.stdout_lines
