@@ -5,5 +5,6 @@
     - name: checkversion
       ios_command:
         commands: show version
+        wait_for: result[0] cotains Version
       register: show_ver
     - debug: var=show_ver.stdout_lines
