@@ -8,5 +8,5 @@
       ios_command:
         commands: show version
       register: result
-    - true: msg="can up ver"
+    - fail: msg="can update version"
       when: "not ('Version 12.4' in result.stdout[0])"
