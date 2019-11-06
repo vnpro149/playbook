@@ -7,5 +7,7 @@
     - name: run show version and check to see if output contains IOS
       ios_command:
         commands: show version
-      register: result
-      when: " ('IOS' in result.stdout)"
+      register: output
+    - name: debug filter
+      debug:
+        msg: "{{ output |parse_genie(command='show version', os='Cisco') }}"
