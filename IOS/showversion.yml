@@ -10,4 +10,4 @@
       register: output
     - name: debug filter
       debug:
-        msg: "{{ output |parse_genie(command='show version', os='Cisco') }}"
+        msg: "{{ output | command_parser(command='show version', os='Cisco') }}"
