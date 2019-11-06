@@ -1,0 +1,20 @@
+---
+- name: Cau hinh dhcp
+  hosts: all
+  tasks:
+    - name: dhcp
+      ios_config:
+        parents:
+          - ip dhcp pool {{item.pool}}
+        lines:
+          - network {{item.ip}}.0 255.255.255.0
+          - default-router {{item.ip}}.1
+      with_items:
+        - { pool: 12, ip: 10.10.12 }
+        - { pool: 13, ip: 10.10.13 }
+    - name: show dhcp
+      ios_command:
+        commands:
+          - show ip dhcp pool
+      register: show_dhcp
+    - debug: var=show_dhcp.stdout_lines
