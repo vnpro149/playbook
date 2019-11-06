@@ -1,6 +1,7 @@
 ---
 - name: Show version
   hosts: all
+  gather_facts: no
   tasks:
     - name: run show version and check to see if output contains IOS
       ios_command:
