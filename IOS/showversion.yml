@@ -2,11 +2,9 @@
 - name: Show version
   hosts: all
   tasks:
-    - name: checkversion
+    - name: run show version and check to see if output contains IOS
       ios_command:
-        commands: 
-          - show version
-        wait_for: 
-          - result[0] contains IOS
+        commands: show version
+        wait_for: result[0] contains IOS
       register: result
     - debug: result.stdout_lines
