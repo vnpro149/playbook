@@ -8,5 +8,4 @@
       ios_command:
         commands: show version
       register: result
-    - debug: var=result.stdout_lines
-      when: " ('Version {{version}}' in result.stdout)"
+      when: " ('Version {{12.4}}' in result.stdout)"
