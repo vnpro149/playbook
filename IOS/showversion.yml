@@ -8,4 +8,4 @@
       ios_command:
         commands: show version
       register: result
-      when: " ('Version {{12.4}}' in result.stdout)"
+      when: " ('Version {{12.4(24)T}}' in result.stdout)"
